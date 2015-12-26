@@ -8,8 +8,6 @@ import pylab as pl
 from sklearn import datasets
 from sklearn.tree import DecisionTreeRegressor
 
-
-
 ################################
 ### ADD EXTRA LIBRARIES HERE ###
 ################################
@@ -19,8 +17,6 @@ from sklearn.grid_search import GridSearchCV
 
 import matplotlib.pyplot as plt
 from collections import Counter
-
-
 
 
 
@@ -38,7 +34,6 @@ def explore_city_data(city_data):
         housing_prices = city_data.target
         housing_features = city_data.data
         
-
         ###################################
         ### Step 1. YOUR CODE GOES HERE ###
         ###################################
@@ -72,8 +67,6 @@ def explore_city_data(city_data):
 #        plt.plot(housing_prices, '.')
 #        plt.hist(housing_prices, bins = 50)
 
-        
-
 
 
 def performance_metric(label, prediction):
@@ -86,8 +79,6 @@ def performance_metric(label, prediction):
         # http://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics
 #        return metrics.mean_absolute_error(label, prediction)
         return metrics.mean_squared_error(label, prediction)
-
-        
         
 
 
@@ -211,7 +202,6 @@ def fit_predict_model(city_data):
 #        mae_scorer = metrics.make_scorer(metrics.mean_absolute_error, greater_is_better = False)
         mse_scorer = metrics.make_scorer(metrics.mean_squared_error, greater_is_better = False)
 
-        
         # 2. Use gridearch to fine tune the Decision Tree Regressor and find the best model
         # http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html
         #sklearn.grid_search.GridSearchCV
@@ -227,8 +217,6 @@ def fit_predict_model(city_data):
         y = reg.predict(x)
         print "House: " + str(x)
         print "Prediction: " + str(y)
-
-
   
 #        ###################################################
 #        print "best estimator: " + str(reg.best_estimator_)
@@ -263,8 +251,6 @@ def main():
 
         # Tune and predict Model
         fit_predict_model(city_data)
-
-
 
 #        ###################################################
 #        lst = []
